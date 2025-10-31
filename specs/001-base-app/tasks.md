@@ -9,20 +9,20 @@ Note: Tasks use repository-root–relative paths (e.g., `outputs/flutter/...`).
 
 **Purpose**: Project initialization and base structure under `outputs/flutter/` directory (not a submodule)
 
-- [ ] T001 Create outputs/flutter directory — outputs/flutter/
-- [ ] T002 Initialize Flutter project with official template (android, ios) — outputs/flutter/
-- [ ] T003 Pin Flutter SDK via FVM to 3.24.0 (creates config) — outputs/flutter/.fvm/fvm_config.json
-- [ ] T004 Create environment mains and bootstrap entry — outputs/flutter/lib/env/app_environment.dart
-- [ ] T005 [P] Create bootstrap file — outputs/flutter/lib/bootstrap/bootstrap.dart
-- [ ] T006 [P] Create root app widget shell — outputs/flutter/lib/app/root_app.dart
-- [ ] T007 [P] Initialize localization scaffolding with English key — outputs/flutter/lib/l10n/intl_en.arb
-- [ ] T008 [P] Configure analysis and lints — outputs/flutter/analysis_options.yaml
-- [ ] T009 [P] Add flutter_lints and get_it dependencies with pinned versions — outputs/flutter/pubspec.yaml
-- [ ] T010 [P] Add environment mains (dev, staging, prod) calling bootstrap — outputs/flutter/lib/main_dev.dart
-- [ ] T011 [P] Add environment main (staging) — outputs/flutter/lib/main_staging.dart
-- [ ] T012 [P] Add environment main (prod) — outputs/flutter/lib/main_prod.dart
-- [ ] T013 [P] Create scripts to install platform-scoped git hooks and set core.hooksPath — outputs/flutter/scripts/setup-githooks.sh
-- [ ] T014 [P] Create CI workflow skeleton for analyze + test (can be refined later) — outputs/flutter/.github/workflows/flutter-ci.yml
+- [x] T001 Create outputs/flutter directory — outputs/flutter/
+- [x] T002 Initialize Flutter project with official template (android, ios) — outputs/flutter/
+- [x] T003 Pin Flutter SDK via FVM to 3.24.0 (creates config) — outputs/flutter/.fvm/fvm_config.json
+- [x] T004 Create environment mains and bootstrap entry — outputs/flutter/lib/main_dev.dart; outputs/flutter/lib/main_staging.dart; outputs/flutter/lib/main_prod.dart
+- [x] T005 [P] Create bootstrap file — outputs/flutter/lib/bootstrap/bootstrap.dart
+- [x] T006 [P] Create root app widget shell — outputs/flutter/lib/app/root_app.dart
+- [x] T007 [P] Initialize localization scaffolding with English key — outputs/flutter/lib/l10n/intl_en.arb
+- [x] T008 [P] Configure analysis and lints — outputs/flutter/analysis_options.yaml
+- [x] T009 [P] Add flutter_lints and get_it dependencies with pinned versions — outputs/flutter/pubspec.yaml
+- [x] T010 [P] Add environment mains (dev, staging, prod) calling bootstrap — outputs/flutter/lib/main_dev.dart
+- [x] T011 [P] Add environment main (staging) — outputs/flutter/lib/main_staging.dart
+- [x] T012 [P] Add environment main (prod) — outputs/flutter/lib/main_prod.dart
+- [x] T013 [P] Create scripts to install platform-scoped git hooks and set core.hooksPath — outputs/flutter/scripts/setup-githooks.sh
+- [x] T014 [P] Create CI workflow skeleton for analyze + test (can be refined later) — outputs/flutter/.github/workflows/flutter-ci.yml
 
 ---
 
@@ -30,11 +30,11 @@ Note: Tasks use repository-root–relative paths (e.g., `outputs/flutter/...`).
 
 **Purpose**: Core infrastructure that MUST be complete before any user story work
 
-- [ ] T015 Create DI container abstraction and registration entry — outputs/flutter/lib/di/container.dart
-- [ ] T016 [P] Add basic theming (light/dark) ensuring readable contrast — outputs/flutter/lib/app/theme/app_theme.dart
-- [ ] T017 [P] Wire RootApp to use theme and route to initial page — outputs/flutter/lib/app/root_app.dart
-- [ ] T018 [P] Document quickstart steps and structure — /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/specs/001-base-app/quickstart.md
-- [ ] T019 [P] Add README for the Flutter project referencing quickstart — outputs/flutter/README.md
+- [x] T015 Create DI container abstraction and registration entry — outputs/flutter/lib/di/container.dart
+- [x] T016 [P] Add basic theming (light/dark) ensuring readable contrast — outputs/flutter/lib/app/theme/app_theme.dart
+- [x] T017 [P] Wire RootApp to use theme and route to initial page — outputs/flutter/lib/app/root_app.dart
+- [x] T018 [P] Document quickstart steps and structure — /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/specs/001-base-app/quickstart.md
+- [x] T019 [P] Add README for the Flutter project referencing quickstart — outputs/flutter/README.md
 
 **Checkpoint**: Foundation ready — user story implementation can begin
 
@@ -48,15 +48,15 @@ Note: Tasks use repository-root–relative paths (e.g., `outputs/flutter/...`).
 
 ### Implementation
 
-- [ ] T020 [US1] Create Hello World page (centered layout, SafeArea, theme-aware) — outputs/flutter/lib/presentation/pages/hello_world_page.dart
-- [ ] T021 [US1] Localize "Hello World" string key and use it in the page — outputs/flutter/lib/l10n/intl_en.arb
-- [ ] T022 [US1] Set initial route in RootApp to HelloWorldPage — outputs/flutter/lib/app/root_app.dart
+- [x] T020 [US1] Create Hello World page (centered layout, SafeArea, theme-aware) — outputs/flutter/lib/presentation/pages/hello_world_page.dart
+- [x] T021 [US1] Localize "Hello World" string key and use it in the page — outputs/flutter/lib/l10n/intl_en.arb
+- [x] T022 [US1] Set initial route in RootApp to HelloWorldPage — outputs/flutter/lib/app/root_app.dart
 
 ### Tests (minimal, per constitutions)
 
-- [ ] T023 [P] [US1] Add widget test asserting "Hello World" is rendered — outputs/flutter/test/widget/hello_world_test.dart
-- [ ] T024 [P] [US1] Add widget test ensuring no tappable semantics nodes exist — outputs/flutter/test/widget/hello_world_test.dart
-- [ ] T025 [P] [US1] Add dark-mode rendering test to ensure readability — outputs/flutter/test/widget/hello_world_test.dart
+- [x] T023 [P] [US1] Add widget test asserting "Hello World" is rendered — outputs/flutter/test/widget/hello_world_test.dart
+- [x] T024 [P] [US1] Add widget test ensuring no tappable semantics nodes exist — outputs/flutter/test/widget/hello_world_test.dart
+- [x] T025 [P] [US1] Add dark-mode rendering test to ensure readability — outputs/flutter/test/widget/hello_world_test.dart
 
 **Checkpoint**: US1 independently functional and testable
 
@@ -70,13 +70,13 @@ Note: Tasks use repository-root–relative paths (e.g., `outputs/flutter/...`).
 
 ### Implementation
 
-- [ ] T026 [US2] Set Android minSdkVersion=21 — outputs/flutter/android/app/build.gradle
-- [ ] T027 [P] [US2] Set iOS platform deployment target to 15.0 — outputs/flutter/ios/Runner.xcodeproj/project.pbxproj
-- [ ] T028 [P] [US2] Ensure environment mains compile (dev, staging, prod) — outputs/flutter/lib/main_dev.dart
+- [x] T026 [US2] Set Android minSdkVersion=21 — outputs/flutter/android/app/build.gradle
+- [x] T027 [P] [US2] Set iOS platform deployment target to 15.0 — outputs/flutter/ios/Runner.xcodeproj/project.pbxproj
+- [x] T028 [P] [US2] Ensure environment mains compile (dev, staging, prod) — outputs/flutter/lib/main_dev.dart
 
 ### Validation Artifacts
 
-- [ ] T029 [P] [US2] Add smoke run notes (commands + screenshots/links) — outputs/flutter/docs/smoke-checks.md
+- [x] T029 [P] [US2] Add smoke run notes (commands + screenshots/links) — outputs/flutter/docs/smoke-checks.md
 
 **Checkpoint**: US2 independently validated by smoke runs
 
@@ -90,12 +90,12 @@ Note: Tasks use repository-root–relative paths (e.g., `outputs/flutter/...`).
 
 ### Implementation
 
-- [ ] T030 [US3] Ensure text respects textScaleFactor and wraps if needed — outputs/flutter/lib/presentation/pages/hello_world_page.dart
+- [x] T030 [US3] Ensure text respects textScaleFactor and wraps if needed — outputs/flutter/lib/presentation/pages/hello_world_page.dart
 
 ### Tests
 
-- [ ] T031 [P] [US3] Add widget test for large `MediaQuery.textScaleFactor` — outputs/flutter/test/widget/hello_world_responsive_test.dart
-- [ ] T032 [P] [US3] Add widget test for landscape orientation sizes — outputs/flutter/test/widget/hello_world_responsive_test.dart
+- [x] T031 [P] [US3] Add widget test for large `MediaQuery.textScaleFactor` — outputs/flutter/test/widget/hello_world_responsive_test.dart
+- [x] T032 [P] [US3] Add widget test for landscape orientation sizes — outputs/flutter/test/widget/hello_world_responsive_test.dart
 
 **Checkpoint**: US3 independently validated for responsiveness
 
@@ -103,12 +103,12 @@ Note: Tasks use repository-root–relative paths (e.g., `outputs/flutter/...`).
 
 ## Phase N: Polish & Cross-Cutting Concerns
 
-- [ ] T033 Create ADR-0001 deferring monitoring/analytics for base slice — /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/specs/001-base-app/adr/ADR-0001-monitoring-defer.md
-- [ ] T034 [P] Create ADR-0002 noting state management N/A for static slice — /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/specs/001-base-app/adr/ADR-0002-state-mgmt-na.md
-- [ ] T035 [P] Add coverage generation script and document usage — outputs/flutter/tool/coverage.sh
-- [ ] T036 [P] Install and verify git hooks via setup script — outputs/flutter/scripts/setup-githooks.sh
-- [ ] T037 [P] Ensure pinned versions (no caret/range) in all pubspecs — outputs/flutter/pubspec.yaml
- - [ ] T038 [P] Create ADR-0003 documenting outputs/flutter not being a Git submodule (exception rationale, risks, mitigation, timebox) — /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/specs/001-base-app/adr/ADR-0003-no-submodule-exception.md
+- [x] T033 Create ADR-0001 deferring monitoring/analytics for base slice — /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/specs/001-base-app/adr/ADR-0001-monitoring-defer.md
+- [x] T034 [P] Create ADR-0002 noting state management N/A for static slice — /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/specs/001-base-app/adr/ADR-0002-state-mgmt-na.md
+- [x] T035 [P] Add coverage generation script and document usage — outputs/flutter/tool/coverage.sh
+- [x] T036 [P] Install and verify git hooks via setup script — outputs/flutter/scripts/setup-githooks.sh
+- [x] T037 [P] Ensure pinned versions (no caret/range) in all pubspecs — outputs/flutter/pubspec.yaml
+- [x] T038 [P] Create ADR-0003 documenting outputs/flutter not being a Git submodule (exception rationale, risks, mitigation, timebox) — /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/specs/001-base-app/adr/ADR-0003-no-submodule-exception.md
  
 
 ---

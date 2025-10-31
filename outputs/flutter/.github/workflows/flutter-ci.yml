@@ -1,0 +1,50 @@
+name: Flutter CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  analyze-and-test:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache pub
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            ~/.dartServer
+          key: 
+            ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-
+
+      - name: Install FVM
+        run: |
+          brew tap leoafarias/fvm
+          brew install fvm
+
+      - name: Install Flutter 3.24.0 via FVM
+        working-directory: outputs/flutter
+        run: |
+          fvm install 3.24.0
+          fvm use 3.24.0 --force
+
+      - name: Install dependencies
+        working-directory: outputs/flutter
+        run: |
+          fvm dart pub get
+
+      - name: Analyze
+        working-directory: outputs/flutter
+        run: fvm flutter analyze
+
+      - name: Run tests
+        working-directory: outputs/flutter
+        run: fvm flutter test
