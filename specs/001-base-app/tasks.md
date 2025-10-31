@@ -7,10 +7,10 @@ Note: Tasks use repository-root–relative paths (e.g., `outputs/flutter/...`).
 
 ## Phase 1: Setup (Shared Infrastructure)
 
-**Purpose**: Project initialization and base structure under `outputs/flutter/` submodule
+**Purpose**: Project initialization and base structure under `outputs/flutter/` directory (not a submodule)
 
-- [ ] T001 Add Flutter outputs submodule in outputs/flutter and record remote in .gitmodules (requires maintainer URL) — outputs/flutter, .gitmodules
-- [ ] T002 Initialize Flutter project with official template in submodule (android, ios) — outputs/flutter/
+- [ ] T001 Create outputs/flutter directory — outputs/flutter/
+- [ ] T002 Initialize Flutter project with official template (android, ios) — outputs/flutter/
 - [ ] T003 Pin Flutter SDK via FVM to 3.24.0 (creates config) — outputs/flutter/.fvm/fvm_config.json
 - [ ] T004 Create environment mains and bootstrap entry — outputs/flutter/lib/env/app_environment.dart
 - [ ] T005 [P] Create bootstrap file — outputs/flutter/lib/bootstrap/bootstrap.dart
@@ -34,7 +34,7 @@ Note: Tasks use repository-root–relative paths (e.g., `outputs/flutter/...`).
 - [ ] T016 [P] Add basic theming (light/dark) ensuring readable contrast — outputs/flutter/lib/app/theme/app_theme.dart
 - [ ] T017 [P] Wire RootApp to use theme and route to initial page — outputs/flutter/lib/app/root_app.dart
 - [ ] T018 [P] Document quickstart steps and structure — /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/specs/001-base-app/quickstart.md
-- [ ] T019 [P] Add README for the Flutter submodule referencing quickstart — outputs/flutter/README.md
+- [ ] T019 [P] Add README for the Flutter project referencing quickstart — outputs/flutter/README.md
 
 **Checkpoint**: Foundation ready — user story implementation can begin
 
@@ -108,7 +108,8 @@ Note: Tasks use repository-root–relative paths (e.g., `outputs/flutter/...`).
 - [ ] T035 [P] Add coverage generation script and document usage — outputs/flutter/tool/coverage.sh
 - [ ] T036 [P] Install and verify git hooks via setup script — outputs/flutter/scripts/setup-githooks.sh
 - [ ] T037 [P] Ensure pinned versions (no caret/range) in all pubspecs — outputs/flutter/pubspec.yaml
-- [ ] T038 [P] Update submodule pin (commit) after initial implementation — outputs/flutter/.git
+ - [ ] T038 [P] Create ADR-0003 documenting outputs/flutter not being a Git submodule (exception rationale, risks, mitigation, timebox) — /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/specs/001-base-app/adr/ADR-0003-no-submodule-exception.md
+ 
 
 ---
 
@@ -122,10 +123,10 @@ Note: Tasks use repository-root–relative paths (e.g., `outputs/flutter/...`).
 ### Task Dependencies (selected)
 
 - T001 → T002 → T003 → T004
-- T004 → T010/T011/T012 → T017
-- T017 → T020 → T022 → T023/T024/T025
-- T026/T027/T028 depend on T002 (project created)
-- T030 depends on T020
+- T004 → T009/T010/T011 → T016
+- T016 → T019 → T021 → T022/T023/T024
+- T025/T026/T027 depend on T002 (project created)
+- T029 depends on T019
 
 ### Parallel Opportunities
 

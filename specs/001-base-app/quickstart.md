@@ -3,25 +3,19 @@
 Created: 2025-10-31
 Branch: 001-base-app
 
-This quickstart sets up the Flutter app skeleton under `outputs/flutter/` as a Git submodule, pins Flutter 3.24.0 via FVM, and runs the app showing only "Hello World".
+This quickstart sets up the Flutter app skeleton under `outputs/flutter/` (plain directory, not a Git submodule), pins Flutter 3.24.0 via FVM, and runs the app showing only "Hello World".
 
 ## Prerequisites
 
 - Flutter (via FVM) installed locally
-- Access to create or reference a remote repository for the Flutter submodule
 - Xcode (for iOS), Android SDK/Studio (for Android)
 
-## 1) Initialize Flutter outputs submodule
-
-Replace `<REMOTE_URL>` with your remote repository URL for the Flutter app.
+## 1) Create Flutter outputs directory
 
 ```bash
 # From repo root
-git submodule add <REMOTE_URL> outputs/flutter
-git commit -m "chore: add flutter outputs submodule"
+mkdir -p outputs/flutter
 ```
-
-If the remote repository is empty, initialize it locally and push after project creation.
 
 ## 2) Pin Flutter version with FVM (3.24.0)
 
@@ -32,7 +26,7 @@ fvm use 3.24.0 --force
 
 This creates `.fvm/fvm_config.json` referencing the pinned version.
 
-## 3) Create the Flutter project in the submodule
+## 3) Create the Flutter project
 
 ```bash
 # Inside outputs/flutter
@@ -82,15 +76,15 @@ flutter run -t lib/main_dev.dart
 
 Select an Android emulator/device or an iOS simulator/device.
 
-## 8) Commit and pin submodule
+## 8) Commit project files
 
 ```bash
 git add .
 git commit -m "feat: base Flutter app with Hello World"
-# Commit and push inside the submodule, then commit the submodule pointer at the parent repo
 ```
 
 ## Notes
 
 - Monitoring & Analytics (Crashlytics/Analytics) are deferred for this slice; add via ADR-0001 in a future feature.
 - All user-visible strings must be localizable; for now we include only English.
+ - Submodule exception: See ADR-0003 for rationale on using a plain directory at `outputs/flutter/` instead of a Git submodule for this POC.

@@ -42,7 +42,7 @@ Compliance gates derived from global Mobile App Constitution and Flutter Constit
 - Static analysis (flutter analyze) 0 errors — Status: PASS criterion for PR.
 - Testing coverage: 100% for domain/data (N/A in this feature); widget test present — Status: PASS for scope.
 - Monitoring & Analytics integration (Crashlytics/Analytics) — Status: Deferred via ADR-0001 (temporary exception for base skeleton; to be implemented in a future monitoring feature).
-- Submodule requirement (`outputs/flutter` as Git submodule) — Status: Planned. To be initialized with a dedicated remote repository and pinned commit; tracked in quickstart.
+- Submodule requirement (`outputs/flutter` as Git submodule) — Status: Ignored for this project (exception). We will use a plain directory at `outputs/flutter/` without a Git submodule. See Constitution Deviations for justification.
 
 No blocking errors for planning. One temporary exception (monitoring/analytics) is justified via ADR-0001 with expiry tied to the first production‑ready release gate.
 
@@ -64,7 +64,8 @@ No blocking errors for planning. One temporary exception (monitoring/analytics) 
 
 - Monitoring & Analytics (Global §14, Flutter §16): Deferred for this base slice. Will add via ADR‑0001 with expiry aligned to first production‑ready release feature.
 - State management (Flutter §13 – flutter_bloc required): Not applicable for this static slice (no state). Will enforce on first stateful feature; record ADR‑0002 noting N/A rationale.
-- All other gates are planned to PASS within this feature’s scope (SDK pin via FVM, outputs submodule, DI bootstrap, English‑only docs, lint/analyze, localization readiness, theming, minimal tests).
+- Outputs as Git submodule (Flutter §0.1, §2.3; Global §30): Ignored for this project; `outputs/flutter/` will be a normal directory. Rationale: simplify POC setup and avoid extra remote. Risk: weaker isolation/compliance; Mitigation: maintain layout and CI checks without submodule; ADR‑0003 documents this time‑boxed exception.
+- All other gates are planned to PASS within this feature’s scope (SDK pin via FVM, DI bootstrap, English‑only docs, lint/analyze, localization readiness, theming, minimal tests).
 
 ## Project Structure
 
@@ -83,7 +84,7 @@ specs/001-base-app/
 ### Source Code (repository root)
 
 ```text
-outputs/flutter/            # Flutter app (Git submodule)
+outputs/flutter/            # Flutter app (NOT a Git submodule for this project)
 ├── .fvm/
 ├── pubspec.yaml
 ├── lib/
@@ -107,7 +108,7 @@ outputs/flutter/            # Flutter app (Git submodule)
         └── hello_world_test.dart
 ```
 
-**Structure Decision**: Use the Flutter outputs submodule layout mandated by the Flutter Constitution. Presentation lives under `outputs/flutter/lib/`, with environment‑specific mains and a single page rendering localized "Hello World". Domain and data packages are created as empty skeletons to enforce layering from the outset.
+**Structure Decision**: Use the Flutter outputs layout under `outputs/flutter/` without a Git submodule (project-level exception). Presentation lives under `outputs/flutter/lib/`, with environment‑specific mains and a single page rendering localized "Hello World". Domain and data packages are created as empty skeletons to enforce layering from the outset. The exception is documented in Constitution Deviations (ADR‑0003).
 
 ## Complexity Tracking
 

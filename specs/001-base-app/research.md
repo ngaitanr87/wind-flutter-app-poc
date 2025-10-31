@@ -8,7 +8,7 @@ Spec: /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/specs/001-base-ap
 
 - Flutter SDK version: 3.24.0 (Stable) pinned via FVM (.fvm/fvm_config.json).
 - Outputs layout: All app code resides under outputs/flutter/ (Flutter constitution §2.1, §2.3; global §30).
-- Submodule: outputs/flutter is a Git submodule pinned to a dedicated remote (initialized when remote URL is provided).
+- Submodule: IGNORED for this project; `outputs/flutter/` is a plain directory. See ADR-0003.
 - Project initialization: `flutter create --platforms=android,ios` executed inside outputs/flutter.
 - DI & bootstrap: Use get_it and a single bootstrap entry to prepare for future layers (Flutter §12, §9.1).
 - State management: Prepare for flutter_bloc; not strictly required for the static Hello World page.
@@ -21,15 +21,14 @@ Spec: /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/specs/001-base-ap
 ## Rationale
 
 - Pinned SDK and outputs directory ensure reproducibility and enforcement by CI and hooks.
-- Submodule separation isolates platform code, allows independent releases and versioning.
 - DI + bootstrap scaffolding avoids later architectural rewrites as features are added.
 - Localization and theming ensure compliance with accessibility and internationalization rules.
 - Widget test verifies spec’s primary outcome quickly and guards regressions.
 
 ## Alternatives Considered
 
-- No submodule, place Flutter app at repo root
-  - Rejected: violates constitutions (global §30, Flutter §2.3, §2.4) and weakens isolation.
+- Use Git submodule for outputs/flutter (per constitutions)
+  - Rejected for this POC: setup overhead and separate remote management; exception recorded in ADR-0003. Isolation/versioning risks accepted short-term with CI mitigations.
 - Skip DI scaffolding for a static page
   - Rejected: short-term convenience but conflicts with mandatory DI rules and layering.
 - Use another framework (React Native, native Swift/Kotlin)
@@ -37,7 +36,7 @@ Spec: /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/specs/001-base-ap
 
 ## Unknowns Resolved
 
-- Remote URL for submodule will be provided by maintainers at initialization time; quickstart documents the commands. No further blockers for this feature’s scope.
+- Submodule remote not applicable; exception per ADR-0003. No further blockers for this feature’s scope.
 
 ## Output
 
