@@ -1,0 +1,1 @@
+ /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/outputs/flutter/.dart_tool/flutter_build/97b7cf2abe6c49eb2aa108a7be755041/native_assets.yaml: 
