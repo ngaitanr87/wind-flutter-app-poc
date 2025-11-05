@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 
-import '../app/root_app.dart';
-import '../di/container.dart';
-import '../env/app_environment.dart';
+import 'package:base_app/app/root_app.dart';
+import 'package:base_app/di/container.dart';
+import 'package:base_app/env/app_environment.dart';
 
 Future<void> bootstrap(AppEnvironment environment) async {
   WidgetsFlutterBinding.ensureInitialized();

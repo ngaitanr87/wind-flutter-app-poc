@@ -30,11 +30,11 @@ jobs:
           brew tap leoafarias/fvm
           brew install fvm
 
-      - name: Install Flutter 3.24.0 via FVM
+      - name: Install Flutter 3.35.0 via FVM
         working-directory: outputs/flutter
         run: |
-          fvm install 3.24.0
-          fvm use 3.24.0 --force
+          fvm install 3.35.0
+          fvm use 3.35.0 --force
 
       - name: Install dependencies
         working-directory: outputs/flutter

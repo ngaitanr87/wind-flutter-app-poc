@@ -1,4 +1,10 @@
 {
   "appTitle": "Base App",
-  "helloWorld": "Hello World"
+  "helloWorld": "Hello World",
+  "welcomeTagline": "Heroes aren't Born. They're Built.",
+  "exploreHeroes": "Explore Heroes",
+  "heroesTitle": "Heroes",
+  "heroesComingSoon": "Heroes list coming soon.",
+  "welcomeLogoWordmark": "MARVEL HEROES",
+  "welcomeLogoSemantic": "Marvel Heroes logo"
 }

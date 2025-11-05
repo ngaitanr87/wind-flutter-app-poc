@@ -4,7 +4,7 @@ These commands verify that the base app runs correctly on Android and iOS after 
 
 ## Environment
 
-- Flutter SDK: 3.24.0 (managed via FVM)
+- Flutter SDK: 3.35.0 (managed via FVM)
 - Dart: 3.5.0
 
 ## Steps

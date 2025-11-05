@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../l10n/app_localizations.dart';
+import 'package:base_app/l10n/app_localizations.dart';
 
 class HelloWorldPage extends StatelessWidget {
   const HelloWorldPage({super.key});
@@ -18,7 +18,7 @@ class HelloWorldPage extends StatelessWidget {
               child: FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
-                  AppLocalizations.of(context)!.helloWorld,
+                  AppLocalizations.of(context).helloWorld,
                   style: textTheme.displaySmall,
                   textAlign: TextAlign.center,
                 ),

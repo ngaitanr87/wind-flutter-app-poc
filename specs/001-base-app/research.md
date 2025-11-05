@@ -6,7 +6,7 @@ Spec: /Users/ngaitan/Documents/FlutterApp/wind-flutter-app-poc/specs/001-base-ap
 
 ## Decisions
 
-- Flutter SDK version: 3.24.0 (Stable) pinned via FVM (.fvm/fvm_config.json).
+- Flutter SDK version: 3.35.0 (Stable) pinned via FVM (.fvm/fvm_config.json).
 - Outputs layout: All app code resides under outputs/flutter/ (Flutter constitution §2.1, §2.3; global §30).
 - Submodule: IGNORED for this project; `outputs/flutter/` is a plain directory. See ADR-0003.
 - Project initialization: `flutter create --platforms=android,ios` executed inside outputs/flutter.

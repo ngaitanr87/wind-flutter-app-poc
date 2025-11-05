@@ -3,7 +3,7 @@
 Created: 2025-10-31
 Branch: 001-base-app
 
-This quickstart sets up the Flutter app skeleton under `outputs/flutter/` (plain directory, not a Git submodule), pins Flutter 3.24.0 via FVM, and runs the app showing only "Hello World".
+This quickstart sets up the Flutter app skeleton under `outputs/flutter/` (plain directory, not a Git submodule), pins Flutter 3.35.0 via FVM, and runs the app showing only "Hello World".
 
 ## Prerequisites
 
@@ -17,11 +17,11 @@ This quickstart sets up the Flutter app skeleton under `outputs/flutter/` (plain
 mkdir -p outputs/flutter
 ```
 
-## 2) Pin Flutter version with FVM (3.24.0)
+## 2) Pin Flutter version with FVM (3.35.0)
 
 ```bash
 # Inside outputs/flutter
-fvm use 3.24.0 --force
+fvm use 3.35.0 --force
 ```
 
 This creates `.fvm/fvm_config.json` referencing the pinned version.

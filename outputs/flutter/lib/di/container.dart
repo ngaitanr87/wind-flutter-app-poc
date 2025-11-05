@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 
-import '../env/app_environment.dart';
+import 'package:base_app/env/app_environment.dart';
 
 final GetIt getIt = GetIt.instance;
 

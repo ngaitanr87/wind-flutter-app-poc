@@ -11,7 +11,7 @@ Note: Tasks use repository-root–relative paths (e.g., `outputs/flutter/...`).
 
 - [x] T001 Create outputs/flutter directory — outputs/flutter/
 - [x] T002 Initialize Flutter project with official template (android, ios) — outputs/flutter/
-- [x] T003 Pin Flutter SDK via FVM to 3.24.0 (creates config) — outputs/flutter/.fvm/fvm_config.json
+- [x] T003 Pin Flutter SDK via FVM to 3.35.0 (creates config) — outputs/flutter/.fvm/fvm_config.json
 - [x] T004 Create environment mains and bootstrap entry — outputs/flutter/lib/main_dev.dart; outputs/flutter/lib/main_staging.dart; outputs/flutter/lib/main_prod.dart
 - [x] T005 [P] Create bootstrap file — outputs/flutter/lib/bootstrap/bootstrap.dart
 - [x] T006 [P] Create root app widget shell — outputs/flutter/lib/app/root_app.dart

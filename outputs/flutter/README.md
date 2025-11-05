@@ -6,7 +6,7 @@ This directory contains the Flutter application for feature **001-base-app**. It
 
 Follow [`specs/001-base-app/quickstart.md`](../specs/001-base-app/quickstart.md) for the authoritative setup steps:
 
-1. Pin Flutter 3.24.0 with FVM (`fvm use 3.24.0 --force`).
+1. Pin Flutter 3.35.0 with FVM (`fvm use 3.35.0 --force`).
 2. Install dependencies: `fvm dart pub get`.
 3. Run static checks: `fvm flutter analyze`.
 4. Execute tests: `fvm flutter test`.

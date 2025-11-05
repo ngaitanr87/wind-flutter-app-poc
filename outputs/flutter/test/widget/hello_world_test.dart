@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -41,9 +42,11 @@ void main() {
 
     final handle = tester.ensureSemantics();
     try {
-      final semantics = tester.getSemantics(find.text('Hello World'));
-      expect(semantics.hasFlag(SemanticsFlag.isButton), isFalse);
-      expect(semantics.hasFlag(SemanticsFlag.hasImplicitScrolling), isFalse);
+      final node = tester.getSemantics(find.text('Hello World'));
+      final semantics = node.getSemanticsData();
+      expect(semantics.hasAction(SemanticsAction.tap), isFalse);
+      expect(semantics.hasAction(SemanticsAction.scrollUp), isFalse);
+      expect(semantics.hasAction(SemanticsAction.scrollLeft), isFalse);
     } finally {
       handle.dispose();
     }

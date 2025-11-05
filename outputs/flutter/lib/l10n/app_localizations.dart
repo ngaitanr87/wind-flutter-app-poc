@@ -15,6 +15,12 @@ class AppLocalizations {
     'en': {
       'appTitle': 'Base App',
       'helloWorld': 'Hello World',
+      'welcomeTagline': "Heroes aren't Born. They're Built.",
+      'exploreHeroes': 'Explore Heroes',
+      'heroesTitle': 'Heroes',
+      'heroesComingSoon': 'Heroes list coming soon.',
+      'welcomeLogoWordmark': 'MARVEL HEROES',
+      'welcomeLogoSemantic': 'Marvel Heroes logo',
     },
   };
 
@@ -24,6 +30,12 @@ class AppLocalizations {
 
   String get appTitle => _localizedValues[locale.languageCode]!['appTitle']!;
   String get helloWorld => _localizedValues[locale.languageCode]!['helloWorld']!;
+  String get welcomeTagline => _localizedValues[locale.languageCode]!['welcomeTagline']!;
+  String get exploreHeroes => _localizedValues[locale.languageCode]!['exploreHeroes']!;
+  String get heroesTitle => _localizedValues[locale.languageCode]!['heroesTitle']!;
+  String get heroesComingSoon => _localizedValues[locale.languageCode]!['heroesComingSoon']!;
+  String get welcomeLogoWordmark => _localizedValues[locale.languageCode]!['welcomeLogoWordmark']!;
+  String get welcomeLogoSemantic => _localizedValues[locale.languageCode]!['welcomeLogoSemantic']!;
 
   static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
   static const delegates = <LocalizationsDelegate<dynamic>>[

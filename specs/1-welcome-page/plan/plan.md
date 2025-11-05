@@ -123,6 +123,9 @@ Output: ../plan/contracts/README.md
 - Asset added and referenced via constants
 - Tests (widget + integration)
 - Docs updated: design-system alignment preserved
+- Welcome flow implemented with stateless wrapper + `WelcomeCubit`, navigation handled via `BlocListener`
+- Background image precached via cubit-side stream listener to meet performance target
+- Widget and integration tests updated to validate localized copy and navigation behavior
 
 ## Post-Plan Next Steps
 - Implement tasks on branch `1-welcome-page`
