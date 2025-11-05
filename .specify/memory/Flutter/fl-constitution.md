@@ -46,7 +46,7 @@ _This constitution extends the shared constitution (`.specify/memory/constitutio
 
 ## 1. Flutter SDK Version [MANDATORY]
 
-- Pinned Stable Flutter Version: 3.24.0 (update monthly).
+- Pinned Stable Flutter Version: 3.35.0
 - Version MUST be managed via FVM and committed (`.fvm/fvm_config.json`).
 - CI MUST verify local Flutter matches pinned version.
 - Any upgrade MUST include:
@@ -396,7 +396,7 @@ data/
 - Release notes (when releasing): PRESENT
 - Environment mains present (dev, staging, prod): VERIFIED
 - Bootstrap initializes DI and theme before RootApp: VERIFIED
-- Flutter stable version matches pinned (3.24.0): VERIFIED
+- Flutter stable version matches pinned (3.35.0): VERIFIED
 - Output directory convention (`outputs/flutter/`) enforced: VERIFIED
 
 ## 23. Prohibited Practices [MANDATORY]
