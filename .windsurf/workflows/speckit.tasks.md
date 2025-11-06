@@ -1,5 +1,6 @@
 ---
 description: Generate an actionable, dependency-ordered tasks.md for the feature based on available design artifacts.
+auto_execution_mode: 1
 ---
 
 ## User Input
@@ -125,4 +126,5 @@ Every task MUST strictly follow this format:
 - **Phase 3+**: User Stories in priority order (P1, P2, P3...)
   - Within each story: Tests (if requested) → Models → Services → Endpoints → Integration
   - Each phase should be a complete, independently testable increment
+  - Each phase should show a constitution(s) and plan evaluation, to double-check the code generated is aligned with those artifacts. If it is aligned = PASS if not it is a FAIL and the task should be re-developed or corrected.
 - **Final Phase**: Polish & Cross-Cutting Concerns
