@@ -1,28 +1,45 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:base_app/app/app_routes.dart';
 import 'package:base_app/app/assets.dart';
+import 'package:base_app/di/container.dart';
 import 'package:base_app/l10n/app_localizations.dart';
 import 'package:base_app/presentation/pages/welcome/cubit/welcome_cubit.dart';
 
+/// Converts an opacity value (0–1) into an 8-bit alpha channel value.
 int _opacity(double value) => (value * 255).round().clamp(0, 255);
 
+/// Entry point for the welcome experience. Resolves [WelcomeCubit] via DI to
+/// satisfy constitution requirements and keeps the page stateless.
 class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
+  const WelcomePage({super.key, this.createCubit});
+
+  /// Optional override used by tests to inject a custom cubit factory.
+  final WelcomeCubit Function()? createCubit;
 
   @override
   Widget build(BuildContext context) {
+    final cubitBuilder = createCubit ?? () => getIt<WelcomeCubit>();
     return BlocProvider(
-      create: (_) => WelcomeCubit(),
+      create: (_) => cubitBuilder(),
       child: const _WelcomeView(),
     );
   }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(ObjectFlagProperty<WelcomeCubit Function()?>.has('createCubit', createCubit));
+  }
 }
 
+/// Internal view widget responsible for rendering the welcome layout.
 class _WelcomeView extends StatelessWidget {
   const _WelcomeView();
 
+  /// Handles navigation requests emitted by the [WelcomeCubit].
   void _handleNavigation(BuildContext context, WelcomeState state) {
     if (state.navigateToHeroes) {
       Navigator.of(context).pushReplacementNamed(AppRoutes.heroes);

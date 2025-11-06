@@ -3,10 +3,21 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:base_app/app/theme/app_theme.dart';
+import 'package:base_app/di/container.dart';
+import 'package:base_app/env/app_environment.dart';
 import 'package:base_app/l10n/app_localizations.dart';
 import 'package:base_app/presentation/pages/welcome/welcome_page.dart';
 
 void main() {
+  setUp(() async {
+    await getIt.reset();
+    await configureDependencies(AppEnvironment.dev);
+  });
+
+  tearDown(() async {
+    await getIt.reset();
+  });
+
   testWidgets('renders welcome content', (tester) async {
     await tester.pumpWidget(
       MaterialApp(

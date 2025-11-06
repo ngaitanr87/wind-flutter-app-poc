@@ -6,6 +6,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:base_app/app/app_routes.dart';
 import 'package:base_app/app/assets.dart';
 import 'package:base_app/app/theme/app_theme.dart';
+import 'package:base_app/di/container.dart';
+import 'package:base_app/env/app_environment.dart';
 import 'package:base_app/l10n/app_localizations.dart';
 import 'package:base_app/presentation/pages/heroes/heroes_page.dart';
 import 'package:base_app/presentation/pages/welcome/welcome_page.dart';
@@ -48,6 +50,15 @@ Future<void> pumpWelcomePage(
 }
 
 void main() {
+  setUp(() async {
+    await getIt.reset();
+    await configureDependencies(AppEnvironment.dev);
+  });
+
+  tearDown(() async {
+    await getIt.reset();
+  });
+
   testWidgets('renders background, tagline, and CTA with correct assets', (tester) async {
     await pumpWelcomePage(tester);
 
